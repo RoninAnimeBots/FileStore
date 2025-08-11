@@ -1,6 +1,3 @@
-#Codeflix_Botz
-#rohit_1888 on Tg
-
 import motor, asyncio
 import motor.motor_asyncio
 import time
@@ -34,7 +31,6 @@ class Rohit:
         
 
 
-    # USER DATA
     async def present_user(self, user_id: int):
         found = await self.user_data.find_one({'_id': user_id})
         return bool(found)
@@ -53,7 +49,6 @@ class Rohit:
         return
 
 
-    # ADMIN DATA
     async def admin_exist(self, admin_id: int):
         found = await self.admins_data.find_one({'_id': admin_id})
         return bool(found)
@@ -74,7 +69,6 @@ class Rohit:
         return user_ids
 
 
-    # BAN USER DATA
     async def ban_user_exist(self, user_id: int):
         found = await self.banned_user_data.find_one({'_id': user_id})
         return bool(found)
@@ -96,7 +90,6 @@ class Rohit:
 
 
 
-    # AUTO DELETE TIMER SETTINGS
     async def set_del_timer(self, value: int):        
         existing = await self.del_timer_data.find_one({})
         if existing:
@@ -111,7 +104,6 @@ class Rohit:
         return 0
 
 
-    # CHANNEL MANAGEMENT
     async def channel_exist(self, channel_id: int):
         found = await self.fsub_data.find_one({'_id': channel_id})
         return bool(found)
@@ -132,12 +124,10 @@ class Rohit:
         return channel_ids
 
     
-# Get current mode of a channel
     async def get_channel_mode(self, channel_id: int):
         data = await self.fsub_data.find_one({'_id': channel_id})
         return data.get("mode", "off") if data else "off"
 
-    # Set mode of a channel
     async def set_channel_mode(self, channel_id: int, mode: str):
         await self.fsub_data.update_one(
             {'_id': channel_id},
@@ -145,9 +135,6 @@ class Rohit:
             upsert=True
         )
 
-    # REQUEST FORCE-SUB MANAGEMENT
-
-    # Add the user to the set of users for a   specific channel
     async def req_user(self, channel_id: int, user_id: int):
         try:
             await self.rqst_fsub_Channel_data.update_one(
@@ -159,15 +146,12 @@ class Rohit:
             print(f"[DB ERROR] Failed to add user to request list: {e}")
 
 
-    # Method 2: Remove a user from the channel set
     async def del_req_user(self, channel_id: int, user_id: int):
-        # Remove the user from the set of users for the channel
         await self.rqst_fsub_Channel_data.update_one(
             {'_id': channel_id}, 
             {'$pull': {'user_ids': user_id}}
         )
 
-    # Check if the user exists in the set of the channel's users
     async def req_user_exist(self, channel_id: int, user_id: int):
         try:
             found = await self.rqst_fsub_Channel_data.find_one({
@@ -180,18 +164,12 @@ class Rohit:
             return False  
 
 
-    # Method to check if a channel exists using show_channels
     async def reqChannel_exist(self, channel_id: int):
-    # Get the list of all channel IDs from the database
         channel_ids = await self.show_channels()
-        #print(f"All channel IDs in the database: {channel_ids}")
 
-    # Check if the given channel_id is in the list of channel IDs
         if channel_id in channel_ids:
-            #print(f"Channel {channel_id} found in the database.")
             return True
         else:
-            #print(f"Channel {channel_id} NOT found in the database.")
             return False
 
 
