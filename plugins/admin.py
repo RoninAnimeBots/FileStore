@@ -14,7 +14,6 @@ from database.database import *
 
 
 
-# Commands for adding admins by owner
 @Bot.on_message(filters.command('add_admin') & filters.private & filters.user(OWNER_ID))
 async def add_admins(client: Client, message: Message):
     pro = await message.reply("<b><i>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..</i></b>", quote=True)
@@ -54,10 +53,10 @@ async def add_admins(client: Client, message: Message):
     if check == len(valid_ids):
         for id in valid_ids:
             await db.add_admin(id)
-        await pro.edit(f"<b>✅ Admin(s) added successfully:</b>\n\n{admin_list}", reply_markup=reply_markup)
+        await pro.edit(f"<b>Admin(s) added successfully:</b>\n\n{admin_list}", reply_markup=reply_markup)
     else:
         await pro.edit(
-            f"<b>⚠️ Some IDs were not added:</b>\n\n{admin_list.strip()}\n\n"
+            f"<b>Some IDs were not added:</b>\n\n{admin_list.strip()}\n\n"
             "<b><i>Check input and try again.</i></b>",
             reply_markup=reply_markup
         )
