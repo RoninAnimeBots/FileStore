@@ -116,7 +116,7 @@ async def start_command(client: Client, message: Message):
 
         if FILE_AUTO_DELETE > 0:
             notification_msg = await message.reply(
-                f"<b>Tʜɪs Fɪʟᴇ ᴡɪʟʟ ʙᴇ Dᴇʟᴇᴛᴇᴅ ɪɴ  {get_exp_time(FILE_AUTO_DELETE)}. Pʟᴇᴀsᴇ sᴀᴠᴇ ᴏʀ ғᴏʀᴡᴀʀᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ʙᴇғᴏʀᴇ ɪᴛ ɢᴇᴛs Dᴇʟᴇᴛᴇᴅ.</b>"
+                f"<b>⚠️ Dᴜᴇ ᴛᴏ Cᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs....</b>\n<blockquote><b>Yᴏᴜʀ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ᴡɪᴛʜɪɴ {get_exp_time(FILE_AUTO_DELETE)}. Sᴏ ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜᴇᴍ ᴛᴏ ᴀɴʏ ᴏᴛʜᴇʀ ᴘʟᴀᴄᴇ ғᴏʀ ғᴜᴛᴜʀᴇ ᴀᴠᴀɪʟᴀʙɪʟɪᴛʏ.</b></blockquote>\n<blockquote><b>ɴᴏᴛᴇ : ᴜsᴇ ᴠʟᴄ ᴏʀ ᴀɴʏ ᴏᴛʜᴇʀ ɢᴏᴏᴅ ᴠɪᴅᴇᴏ ᴘʟᴀʏᴇʀ ᴀᴘᴘ ᴛᴏ ᴡᴀᴛᴄʜ ᴛʜᴇ ᴇᴘɪsᴏᴅᴇs ᴡɪᴛʜ ɢᴏᴏᴅ ᴇxᴘᴇʀɪᴇɴᴄᴇ!</b></blockquote>"
             )
             reload_url = (
                 f"https://t.me/{client.username}?start={message.command[1]}"
@@ -129,13 +129,8 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                    [InlineKeyboardButton("• ᴍᴏʀᴇ ᴄʜᴀɴɴᴇʟs •", url="https://t.me/Nova_Flix/50")],
-
-    [
-                    InlineKeyboardButton("• ᴀʙᴏᴜᴛ", callback_data = "about"),
-                    InlineKeyboardButton('ʜᴇʟᴘ •', callback_data = "help")
-
-    ]
+                    InlineKeyboardButton("◉ ᴀʙᴏᴜᴛ ᴍᴇ", callback_data = "about"),
+                    InlineKeyboardButton('ᴄʟᴏꜱᴇ ✘', callback_data = "close")
             ]
         )
         await message.reply_photo(
@@ -148,7 +143,7 @@ async def start_command(client: Client, message: Message):
                 id=message.from_user.id
             ),
             reply_markup=reply_markup,
-            message_effect_id=5104841245755180586)  # 🔥
+            message_effect_id=5046509860389126442)
         
         return
 
@@ -164,7 +159,7 @@ async def start_command(client: Client, message: Message):
 chat_data_cache = {}
 
 async def not_joined(client: Client, message: Message):
-    temp = await message.reply("<b><i>ᴡᴀɪᴛ ᴀ sᴇᴄ..</i></b>")
+    temp = await message.reply("<b>Please Wait...</b>")
 
     user_id = message.from_user.id
     buttons = []
@@ -213,18 +208,18 @@ async def not_joined(client: Client, message: Message):
                 except Exception as e:
                     print(f"Error with chat {chat_id}: {e}")
                     return await temp.edit(
-                        f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @rohit_1888</i></b>\n"
-                        f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
+                        f"<b><blockquote>𝖠𝗇 𝖤𝗋𝗋𝗈𝗋 𝖮𝖼𝖼𝗎𝗋𝖾𝖽: {e}</blockquote></b>"
                     )
 
         # Retry Button
         try:
-            buttons.append([
-                InlineKeyboardButton(
-                    text='♻️ Tʀʏ Aɢᴀɪɴ',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
-                )
-            ])
+            reload_url = f"https://t.me/{client.username}?start={message.command[1]}"
+            keyboard = InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton("⭕️ Cʟɪᴄᴋ Hᴇʀᴇ", url=reload_url),
+                    InlineKeyboardButton("Cʟᴏꜱᴇ ✗", callback_data="close")
+                ]]
+            )
         except IndexError:
             pass
 
@@ -243,8 +238,7 @@ async def not_joined(client: Client, message: Message):
     except Exception as e:
         print(f"Final Error: {e}")
         await temp.edit(
-            f"<b><i>! Eʀʀᴏʀ, Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴛᴏ sᴏʟᴠᴇ ᴛʜᴇ ɪssᴜᴇs @rohit_1888</i></b>\n"
-            f"<blockquote expandable><b>Rᴇᴀsᴏɴ:</b> {e}</blockquote>"
+            f"<b><blockquote>𝖠𝗇 𝖤𝗋𝗋𝗈𝗋 𝖮𝖼𝖼𝗎𝗋𝖾𝖽: {e}</blockquote></b>"
         )
 
 #=====================================================================================##
@@ -265,12 +259,26 @@ async def schedule_auto_delete(client, codeflix_msgs, notification_msg, file_aut
 
     try:
         keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("ɢᴇᴛ ғɪʟᴇ ᴀɢᴀɪɴ!", url=reload_url)]]
+            [[
+                    InlineKeyboardButton("⭕️ Cʟɪᴄᴋ Hᴇʀᴇ", url=reload_url),
+                    InlineKeyboardButton("Cʟᴏꜱᴇ ✗", callback="close")
+            ]]
         ) if reload_url else None
 
         await notification_msg.edit(
-            "<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!\n\nᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴅᴇʟᴇᴛᴇᴅ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ 👇</b>",
+            "<b>Pʀᴇᴠɪᴏᴜs Mᴇssᴀɢᴇ ᴡᴀs Dᴇʟᴇᴛᴇᴅ 🗑\n<blockquote>Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇs ᴀɢᴀɪɴ, ᴛʜᴇɴ ᴄʟɪᴄᴋ: <a href='{reload_url}'>[⭕️ Cʟɪᴄᴋ Hᴇʀᴇ]</a> ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴇʟsᴇ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ.</blockquote></b>",
             reply_markup=keyboard
         )
     except Exception as e:
         print(f"Error updating notification with 'Get File Again' button: {e}")
+
+@Bot.on_callback_query(filters.regex("close"))
+async def close_callback(client: Client, callback_query: CallbackQuery):
+    try:
+        await callback_query.message.delete()
+    except Exception as e:
+        print(f"Error deleting message on 'close' callback: {e}")
+    try:
+        await callback_query.answer()
+    except:
+        pass
