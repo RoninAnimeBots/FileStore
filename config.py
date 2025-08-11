@@ -30,10 +30,10 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "7328629001")) # Owner id
 PORT = os.environ.get("PORT", "8001")
 #--------------------------------------------
 DB_URI = os.environ.get("DATABASE_URL", "")
-DB_NAME = os.environ.get("DATABASE_NAME", "Cluooo")
+DB_NAME = os.environ.get("DATABASE_NAME", "RoninAnime")
 #--------------------------------------------
-FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "10"))  # 0 means no expiry
-BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/CodeflixSupport")
+FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "0"))  # 0 means no expiry
+BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/RoninAnime")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "200"))
 #--------------------------------------------
 START_PIC = os.environ.get("START_PIC", "https://telegra.ph/file/ec17880d61180d3312d6a.jpg")
