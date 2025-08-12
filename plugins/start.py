@@ -213,13 +213,12 @@ async def not_joined(client: Client, message: Message):
 
         # Retry Button
         try:
-            reload_url = f"https://t.me/{client.username}?start={message.command[1]}"
-            keyboard = InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton("⭕️ Cʟɪᴄᴋ Hᴇʀᴇ", url=reload_url),
-                    InlineKeyboardButton("Cʟᴏꜱᴇ ✗", callback_data="close")
-                ]]
-            )
+            buttons.append([
+                InlineKeyboardButton(
+                    text='♻️ Tʀʏ Aɢᴀɪɴ',
+                    url=f"https://t.me/{client.username}?start={message.command[1]}"
+                )
+            ])
         except IndexError:
             pass
 
