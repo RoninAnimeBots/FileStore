@@ -22,8 +22,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text=HELP_TXT.format(first=query.from_user.first_name),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-                 InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
+                [InlineKeyboardButton("ᴄʟᴏꜱᴇ ✘", callback_data='close')]
             ])
         )
 
@@ -32,8 +31,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text=ABOUT_TXT.format(first=query.from_user.first_name),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-                 InlineKeyboardButton('ᴄʟᴏꜱᴇ', callback_data='close')]
+                [InlineKeyboardButton('ᴄʟᴏꜱᴇ ✘', callback_data='close')]
             ])
         )
 
