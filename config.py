@@ -46,7 +46,7 @@ HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏ�
 ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/OrewaRonin>浪人</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ: <a href=https://t.me/Ronin_Anime>ʀᴏɴɪɴ ᴀɴɪᴍᴇ</a>\n◈ ᴏᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ: <a href=https://t.me/RoninXNetwork>ʀᴏɴɪɴ ɴᴇᴛᴡᴏʀᴋ</a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀᴛ: <a href=https://t.me/RoninChat>ʀᴏɴɪɴ ᴄʜᴀᴛ</a>\n◈ ɴsғᴡ: <a href=https://t.me/AdultRonin>ᴀᴅᴜʟᴛ ʀᴏɴɪɴ</a></blockquote></b>"
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "<b>🍁 Hᴇʏ, {mention}\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ!..ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\n<blockquote>ᴘᴏᴡᴇʀᴇᴅ ʙʏ - [ʀᴏɴɪɴ ᴀɴɪᴍᴇ](https://t.me/RoninANime)</blockquote></b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>🍁 Hᴇʏ, {mention}\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ!..ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\n<blockquote>ᴘᴏᴡᴇʀᴇᴅ ʙʏ - <a href=https://t.me/RoninAnime>ʀᴏɴɪɴ ᴀɴɪᴍᴇ</a></blockquote></b>")
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>⚠️ Hᴇʏ, {mention} ×</b></blockquote>\n<b>Yᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴᴇᴅ ᴀʟʟ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ. Pʟᴇᴀsᴇ ʙᴇ sᴜʀᴇ ᴛᴏ ᴊᴏɪɴ ᴀʟʟ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs ᴘʀᴏᴠɪᴅᴇᴅ ʙᴇʟᴏᴡ, ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ.. !</b>\n\n❗️Fᴀᴄɪɴɢ ᴘʀᴏʙʟᴇᴍs, ᴜsᴇ: /help")
 
 CMD_TXT = """<blockquote><b>» ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs:</b></blockquote>
