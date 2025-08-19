@@ -24,14 +24,14 @@ APP_ID = int(os.environ.get("APP_ID", "29478593")) #Your API ID from my.telegram
 API_HASH = os.environ.get("API_HASH", "") #Your API Hash from my.telegram.org
 #--------------------------------------------
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002170811388")) #Your db channel Id
-OWNER = os.environ.get("OWNER", "OrewaRonin") # Owner username without @
-OWNER_ID = int(os.environ.get("OWNER_ID", "8356437885")) # Owner id
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-10030163509208")) #Your db channel Id
+OWNER = os.environ.get("OWNER", "DARKXSIDE78") # Owner username without @
+OWNER_ID = int(os.environ.get("OWNER_ID", "7086472788")) # Owner id
 #--------------------------------------------
 PORT = os.environ.get("PORT", "8000")
 #--------------------------------------------
 DB_URI = os.environ.get("DATABASE_URL", "")
-DB_NAME = os.environ.get("DATABASE_NAME", "RoninAnime")
+DB_NAME = os.environ.get("DATABASE_NAME", "Website")
 #--------------------------------------------
 FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "0"))  # 0 means no expiry
 BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/RoninAnime")
